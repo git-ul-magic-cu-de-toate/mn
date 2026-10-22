@@ -1,0 +1,17 @@
+1. Prezinta o metoda numerica la alegere
+
+2. Codul pt aprox quadrice
+
+3. Ce asigura deplasarea în metoda qr de aflare a val prorpii pentru o matrice tridiag simetrica
+
+4. Nu mai ?tiu pare rau
+
+5. Explica?i grafic cuadraturi adaptive
+
+6. Sa facem dvs pt [2 2; -1 1]
+
+7. Cod euler plus cod func?ie pt euler
+
+8. Ceva cu eroarea N1(h) ...sa aratam ca ceva este N2(h)....
+
+9. Problema de fizica la alegere cu o metod numerica
