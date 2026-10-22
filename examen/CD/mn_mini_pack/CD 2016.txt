@@ -1,0 +1,9 @@
+1.cod metoda Euler(considerati toti parametrii necesari inclusiv functia). (1 p)
+2.Deduceti matricea coeficientilor sistemului de ecuatii liniare pentru aproximarea in sensul celor mai mici patrate cu un polinom de grad n. (1.5 p)
+3.Ce realizeaza deplasarea pentru metoda QR? (1 p)
+4.DVS(descompunerea valorilor singulare)-explicati detaliat si dati un exemplu (1.5 p)
+5.Determinati functia spline de clasa C2 ce foloseste functii de imbinare s0 polinom de grad 2 si s1 = a*x + b + c*(1-x)*e^x. Se dau x = [-1 0 1] f = [6 4 3]. (1.5 p)
+6.Ce aduc nou iteratiile pentru metodele ODE?Comparati cu iteratiile metodelor studiate anterior. (1 p)
+7.cod metoda Simpson simpla nu compusa(considerati toti parametrii necesari). (1 p)
+8.Cum sunt generate polinoamele cu ajutorul carora descriem curba Bezier? Desenati curba Bezier pornind de la punctele P0(1,1), P1(2,2), P2(3,0), P3(4,2). ( sfat algoritmul de Casteljau).
+9.bonus
