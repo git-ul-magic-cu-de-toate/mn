@@ -1,0 +1,224 @@
+SAVA Victor 311CA
+
+# Overview
+
+This project implements a series of numerical methods in Octave to solve a
+Markov graph-based labyrinth problem, a linear regression problem that
+predicts housing prices based on various features and a neural network
+classification problem.
+
+---
+
+## Task 1: Markov is coming
+
+This task implements the solution for a Markov graph-based labyrinth problem.
+
+---
+
+### Implemented Functions:
+
+### 1. `parse_labyrinth(file_path)`
+
+- **Purpose:** Reads the labyrinth matrix from a file.
+  `m` is the number of lines and `n` is the number of columns.
+  The values stored represent an encoding of the walls (North, South, East, West).
+
+---
+
+### 2. `get_adjacency_matrix(Labyrinth)`
+
+- **Purpose:** Builds an oriented graph adjacency matrix of size `m * n + 2` from the labyrinth matrix.
+  The 2 added rows and columns represent the WIN and LOSE states.
+  Based on the decoded values from the labyrinth matrix, the adjacency matrix is formed.
+
+---
+
+### 3. `get_link_matrix(Labyrinth)`
+
+- **Purpose:** Creates the row stochastic matrix from the adjacency matrix.
+
+---
+
+### 4. `get_Jacobi_parameters(Link)`
+
+- **Purpose:** Returns the (G, c) matrices required for solving the Markov
+  system using Jacobi iterative method.
+
+---
+
+### 5. `perform_iterative(G, c, x0, tol, max_steps)`
+
+- **Purpose:** Solves the linear system p = Gp + c using the Jacobi method.
+
+---
+
+### 6. `heuristic_greedy(start_position, probabilities, Adj)`
+
+- **Purpose:** Finds the valid path using an heuristic implementation,
+  that always finds the neighbor with the highest winning probability.
+
+---
+
+### 7. `decode_path(path, lines, cols)`
+
+- **Purpose:** Converts the path into human-readable coordinates.
+
+---
+
+### Additional Notes
+
+- The maze is **not necessarily square** — the number of columns may differ from the number of rows.
+
+- It is **guaranteed** that the maze is connected and that there
+  is always **at least one path** to both the WIN state and the LOSE state.
+
+- The **adjacency** and **transition matrices** are large but **sparse**.
+  It is **MANDATORY** to store these matrices, as well as any derived matrices
+  (such as the iteration matrix or iteration vector), using **sparse matrix representations**.
+  Octave provides efficient ways to handle sparse matrices by storing
+  only the non-zero elements and their positions.
+  Specialized functions for sparse matrix operations are available
+  and should be used where appropriate.
+- The use of the function `dlmread` is **prohibited** due to potential compatibility
+  issues across different versions of GNU Octave.
+  Please use **alternative methods** for parsing input files.
+
+---
+
+### Resources used for this task:
+
+- [dec2bin](<https://www.mathworks.com/help//releases/R2021a/symbolic/sym.dec2bin.html#:~:text=Description,-example&text=str%20%3D%20dec2bin(%20d%20)%20returns,character%20array%20with%20N%20rows>)
+- [bsxfun 1](https://www.mathworks.com/matlabcentral/answers/163472-divide-matrix-by-a-vector-of-the-same-number-of-column)
+- [bsxfun 2](https://www.mathworks.com/help/matlab/ref/bsxfun.html)
+
+---
+
+## Task 2: Linear regression
+
+This task implements a solution for a linear regression problem that
+predicts housing prices based on various features.
+
+---
+
+### Implemented functions:
+
+### 1. `parse_data_set_file(file_path)`
+
+- **Purpose:** Parses a text file with a custom format: the first line contains
+  the number of rows and columns, followed by data rows where the first column
+  is the output - Y - and the rest are predictors.
+  The function stores a mixed-type matrix (InitialMatrix) using Octave’s
+  cell type to accommodate both numerical and string values.
+
+---
+
+### 2. `prepare_for_regression(InitialMatrix)`
+
+- **Purpose:** Converts InitialMatrix into a fully numerical matrix. All category
+  variables such as 'yes'/'no' are converted to 1/0, and 'furnished' types are
+  expanded into two new columns. This ensures compatibility with numerical operations.
+
+---
+
+### 3. `linear_regression_cost_function(Theta, Y, FeatureMatrix)`
+
+- **Purpose:** Computes the standard cost function for linear regression.
+
+---
+
+### 4. `parse_csv_file(file_path)`
+
+- **Purpose:** Reads a `.csv` file with both numerical and category predictors,
+  returning the output vector Y and an initial mixed matrix InitialMatrix.
+
+---
+
+### 5. `gradient_descent(FeatureMatrix, Y, n, m, alpha, iter)`
+
+- **Purpose:** Implements the gradient descent algorithm to find the
+  optimal vector of parameters Theta.
+
+---
+
+### 6. `normal_equation(FeaturesMatrix, Y, tol, iter)`
+
+- **Purpose:** Solves the regression problem using the conjugate gradient method
+  on the normal equation.
+  If the matrix is not positive definite, the function returns a vector of zeros.
+
+---
+
+### 7. `lasso_regression_cost_function(Theta, Y, FeMatrix, lambda)`
+
+- **Purpose:** Computes the standard cost function for Lasso regression.
+
+---
+
+### 8. `ridge_regression_cost_function(Theta, Y, FeMatrix, lambda)`
+
+- **Purpose:** Computes the standard cost function for Ridge regression.
+
+---
+
+### Resources used for this task:
+
+- [Gradient Descent](https://www.youtube.com/watch?v=8Fd9a0U27jQ&t=297s)
+
+## Task 3: MNIST 101
+
+This task implements the solution for a neural network classification problem.
+
+### Implemented Functions
+
+### 1. `load_dataset(path)`
+
+- **Purpose**: Loads a `.mat` file located at the specified relative path.
+
+---
+
+### 2. `split_dataset(X, y, percent)`
+
+- **Purpose**: Splits the dataset into training and test sets. The examples are first shuffled before splitting.
+
+---
+
+### 3. `initialize_weights(L_prev, L_next)`
+
+- **Purpose**: Initializes the weight matrix between two layers of the network
+  with values from the range (−eps, eps).
+
+---
+
+### 4. `cost_function(params, X, y, lambda, input_layer_size, hidden_layer_size, output_layer_size)`
+
+- **Purpose**: Computes the cost function and gradient using forward and backward propagation.
+
+---
+
+### 5. `predict_classes(X, weights, input_layer_size, hidden_layer_size, output_layer_size)`
+
+- **Purpose**: Predicts the class label for each example in the test set using forward propagation.
+
+---
+
+### Additional Notes
+
+- In the dataset, the digit `0` is labeled as `10` to align
+  with GNU Octave's 1-based indexing.
+
+- For cost calculation, `y` must be expanded to an encoded matrix (based on canonical vector).
+
+- The column of ones (bias unit) is **not** pre-added to `X` and must be appended
+  within `cost_function` and `predict_classes`.
+
+### Resources used for this task:
+
+- [Split Dataset](https://stackoverflow.com/questions/49242812/split-the-dataset-into-two-subsets-in-matlab-octave)
+- [Randon number generator in an interval](https://www.mathworks.com/matlabcentral/answers/383378-how-do-i-generate-a-random-number-between-two-numbers)
+
+---
+
+### General resources used for all tasks:
+
+- [Octave Docs](https://docs.octave.org/latest/)
+- [Matlab Docs](https://www.mathworks.com/help/matlab/functions.html)
