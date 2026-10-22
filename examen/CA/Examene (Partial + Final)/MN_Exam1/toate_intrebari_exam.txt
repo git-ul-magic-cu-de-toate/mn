@@ -1,0 +1,53 @@
+* 1. DVS - explicati detaliat
+* 2. Implementare - calcul polinomului Lagrange
+* 3. Demonstrati ca g* (cel mai bun approximant in sensul cmmp al unui element f in subsp G) este unic. Folositi proprietatea <f - g*, g> = 0.
+* 4. Explicati FFT fara formule
+* 5. Deduceti quadrature cu grad maxim de valabilitate integrala de la a la b din f(x) = c1f(x1) + c2f(x2)
+* 6. Deduceti formula de derivare de doua ori folosind aproximarea Taylor.
+* 7. Implementare - regula Simpson
+* 8. Aplicati QR cu deplasare pentru o matrice simetrica tridiagonala.
+* 9. Prezentati o problema fizica (reala) si rezolvati-o numeric (metode studiate pt final).
+* 10. Fie A matrice patratica cu DVS: A = USV^t, atunci A^-1 exista <=> S^-1 exista. Determinati SVD pentru A^-1.
+- 11. Implementare - imbunatateste formula compusa a trapezelor si are eroarea O(h^10).
+* 12. Determinati c0, c1, x1 astfel incat quadrature integrala de la 0 la 1 din f(x) = c0(f(0) + f(x1)) + c1f(x1) sa aiba grad maxim de valabilitate. Cat este gradul maxim de valabilitate?
+* 13. Determinati toate aproximarile Pade de grad N=2 (sau N=3) pt care o functie care are aproximarea in serie McLaurin serie dupa i din (-x)^i/i!.
+* 14. Determinati cel mai mare pas posibil pentru log10 pe [1, 10] astfel incat interpolarea cu polinom de grad 2 sa aiba acuratetea 10^-6.
+* 15. Explicati grafic quadraturile adaptive.
+- 16. Implementare - metode Euler ODE
+* 17. Aplicati un pas din algoritmul QR cu deplasare pe o matrice 3x3 (sau 4x4) simetrica tridiagonala. Ce asigura deplasarea pentru QR? (sau Ce observati?)
+* 18. Cum sunt generate polinoamele ce stau la baza formei algebrice a curbelor Bezier? Desenati o curba Bezier pornind de la 4 puncte necoplanare (sau care nu formeaza un poligon convex sau concav, ci mixt).
+* 19. La ce se refera clasa unui spline? Ce clasa au splineurile ce folosesc functii de imbinare polinoame de grad 3?
+* 20. Explicati cum se construiesc curbele Bezier pornind de la 4 puncte initiale P0,P1,P2,P3 (inclusiv grafic)
+* 21. Sa se calculeze splineul natural C2 ce foloseste functii de imbinare polinoame de grad 3 s1, s2 pentru functia f(x): x= [0 1 2], f = [6 4 3].
+* 22. Aflati formula gaussiana de integrare integrala de a 0 la 1 din f(x) = a1f(x1) + a2f(x2) + a3f(x3). Ce grad de valabilitate are?
+- 23. Se considera functia f:[-1, 1] -> R, f(x) = x^3 - x^2 + 3x. Sa se determine exact si aproximativ (cu Remes) polinomul minimax de gradul 1 pentru f.
+* 24. Ce aduc nou iteratiile pentru metodele ODE? Comparati cu iteratiile metodelor studiate anterior.
+* 25. Metoda numerica de derivare ordin 4, folosind Taylor.
+* 26. Implementare - FFT
+* 27. Explicati grafic formulele Trapezelor si Simpson compuse. Explicati grafic generalizarea.
+- 28. Implementare - calculul aproximarii cubice, in sensul cmmp, pentru o functie cunoscuta in 3 puncte.
+* 29. Considerati o functie data in 3 puncte. Construiti o interpolare spline continua formata din functiile de imbinare ae^x + b si clogx + d.
+- 30. Daca N1(h), 1 > h > 0 este o formula de aproximare pentru o valoare M, cu eroarea de forma K1h^2 + K2h^4 + K3h^6, atunci polinomul liniar Lagrange care trece prin punctele (h^2,N1(h)) si (h^2,N1(h/2)) evaluat in 0 este egal cu N2(h).
+* 31. Ce inseamna aproximarea continua trigonometrica in sensul cmmp? Specificati, fara formule, unde se aplica FFT.
+- 32. Imbunatatiti formula N1(h) (depinde doar de pasul considerat), care aproximeaza o valoare M si are eroarea serie dupa i din Ki(-h)^(5i). Ce conditie trebuie sa indeplineasca pasul h pentru a putea imbunatati o asemena formula?
+* 33. Implementare - DVS
+* 34. Alegeti pasul h astfel incat interpolarea lineara (cu polinom Lagrange) pentru lnx pe [1, 10] sa fie precisa pana la 5 zecimale.
+* 35. Explicati transformata Fourier tinand cont de optimizarea facuta la rezolvarea sistemului de ecuatii implicat.
+* 36. Aproximati solutia ODE y' = y - t^2 + 1, 0 <= t <= 2, y(0) = 0.5 dupa ce v-ati asigurat ca aceasta este unica. Ce reprezinta o iteratie pentru acest tip de metode? Aproximati y(1.3).
+37. Aproximati aria unui cerc raza a (ales de voi) cu formula Simpson obtinand o acuratete de 5 zecimale.
+* 38. Cum sunt generate polinoamele ce stau la baza formei algebrice a curbelor Bezier? Desenati o curba Bezier pornind de la 3 puncte in plan si aproximati integrala din aceasta curba.
+- 39. Cati parametri sunt necunoscuti in cazul interpolarii Hermite? Care sunt conditiile din care ii putem deduce?
+* 40. Deduceti relatia f'(x0) = lim (h->0) din (f(x0+h)-f(x0)) / h folosind polinomul Lagrange.
+* 41. Ce forma are matricea coeficientilor sistemului de ecuatii liniare din are se deduc parametrii necesari interpolarii spline de clasa C2 functii de imbinare polinoame de grad 3 natural? Dar pentru tensionat? Deduceti in unul din cazuri forma concreta a sistemului de ecuatii liniare.
+* 42. Regula trapezului pt integrala de la 0 la 2 din f(x) da 4, iar Simpson 2. Calculati f(1).
+43. Ce polinoame se folosesc pentru determinarea celui mai bun aproximant uniform de grad N?. Explicati.
+- 44. Prezentati polinomul ortogonal definit in mod unic in raport cu ponderea considerata la integrarea gaussiana.
+- 45. Sa se determine polinomul Cebisev de grad 2 pentru functia f:[-5, 3]-> R, f(x) = 2x+1.
+46. Imbunatatiti N1(h) care aproximeaza M cu o eroare O(h) serie dupa i Ki * h^i printr-o formula mai buna, ce are eroarea O(h^2), serie dupa i Ki conjugat * h^i.
+47. Imbunatatiti N1(h) (depinde doar de pasul considerat) 1 > h > 0, care aproximeaza o valoare M cu eroarea serie dupa i din Ki * h^(2i).
+* 48. Implementare - Metoda puterii
+49. Considerati A matrice 3x3 si (x, landa), vector, val proprie. Alegeti alfa si v din R^3 astfel incat v^t * x = 1. Calculati valorile proprii pentru matricea google G = alfa A + (1 - alfa) landa x * v^t.
+* 50. Cum se alege parametrul de la Metoda Puterii inverse?
+* 51. Calculati valoriile proprii pentru o matrice Google aleasa de noi, folosind Metoda Puterii si o tehnica de deflatie.
+52. Considerati 5 pagini web cu link-uri intre ele. Construiti matricea Google si explicati ce inseamna Page Rank.
+* 53. Fie (landa, u) vectori si valori propii pt A. Vectorul x = 1 / (landa * vj) * coloana j a lui A poate fi considerat pt deflatie? Cate modalitati avem sa alegem x?
