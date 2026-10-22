@@ -1,0 +1,10 @@
+1. Fie A matrice patratica cu DVS: A = USV^t, atunci A^-1 exista <=> S^-1 exista. Determinati SVD pentru A^-1.
+2. Matlab: Implementare metoda Puterii si aplicati o metoda de deflatie pe matrice
+3. Alegeti pasul h astfel incat interpolarea de grad 3 (cu polinom Lagrange) pentru lnx pe [1, 10] sa fie precisa pana la 5 zecimale.
+4. Explicati transformata Fourier tinand cont de optimizarea facuta la rezolvarea sistemului de ecuatii implicat. Cum sunt calculati coeficientii din FFT.
+5. Aproximati solutia ODE y' = y - t^2 + 1, 0 <= t <= 2, y(0) = 0.5 dupa ce v-ati asigurat ca aceasta este unica. Ce reprezinta o iteratie pentru acest tip de metode? Trasati curba Bezier pentru solutie.
+6. Explicati grafic quadraturile adaptive. Explicati cum se pot folosi quadraturile gaussiene pentru aceste quadraturi
+7. Aproximati aria unui cerc raza a (ales de voi), folosind si extrapolarea Richardson, obtinand o acuratete de 5 zecimale.
+8. Matlab - Implementare metoda Romberg
+9. Bonus - Calculati valorile proprii pentru o matrice Google aleasa de voi(3x3) prin a transforma-o intr-o matrice tridiagonala apoi aplicati metoda QR cu deplasare.
+
